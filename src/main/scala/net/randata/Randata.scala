@@ -18,24 +18,7 @@ class Randata(seed: Long) {
     list(index)
   }
 
-  def nextAnimal = nextElement(Data.AnimalList)
-  def nextColor  = nextElement(Data.ColorList)
-  def nextNoun   = nextElement(Data.NountList)
 
-  def nextColoredAnimal = nextColor + " " + nextAnimal
 
-  def nextCompany = {
-    def nextPrefix   = nextElement(Data.Company.PrefixList)
-    def nextBusiness = nextElement(Data.Company.BusinessList)
-    def nextSuffix   = nextElement(Data.Company.SuffixList)
 
-    nextBoolean match {
-      case true  => nextPrefix + nextBusiness
-      case false => nextBusiness + nextSuffix
-    }
-  }
-
-  def nextFirstName = nextElement(Data.Name.FirstList)
-  def nextLastName  = nextElement(Data.Name.LastList)
-  def nextFullName = nextFirstName + " " + nextLastName
 }
