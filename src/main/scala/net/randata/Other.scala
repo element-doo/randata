@@ -1,5 +1,6 @@
 package net.randata
 
 trait Other { self: Randata =>
-  def nextNoun   = nextElement(Data.NountList)
+  def nextColor = nextElement(Data.Colors)
+  def nextOther = nextElement(Data.Other)
 }

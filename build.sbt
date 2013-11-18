@@ -14,6 +14,8 @@ unmanagedSourceDirectories in Test := (scalaSource in Test).value :: Nil
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "2.0.RC3" % "test"
 , "junit" % "junit" % "4.11" % "test"
+, "com.github.scala-incubator.io" %% "scala-io-core" % "0.4.2"
+, "com.github.scala-incubator.io" %% "scala-io-file" % "0.4.2"
 )
 
 // ### COMPILE SETTINGS ### //
@@ -56,3 +58,5 @@ javacOptions := Seq(
 // ### ECLIPSE ### //
 
 EclipseKeys.executionEnvironment := Some(EclipseExecutionEnvironment.JavaSE16)
+
+EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource

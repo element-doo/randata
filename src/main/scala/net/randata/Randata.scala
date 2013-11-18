@@ -13,6 +13,9 @@ class Randata(seed: Long) {
   def nextBoolean =
     r.nextBoolean
 
+  def nextDigit =
+    nextInt(48, 58).toChar
+
   def nextElement[T](list: Seq[T]) = {
     val index = nextInt(0, list.size)
     list(index)
