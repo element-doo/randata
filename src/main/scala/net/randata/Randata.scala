@@ -7,35 +7,35 @@ class Randata(seed: Long) {
   val r = new Random(seed)
 
   // [min, max>
-  def getInt(min: Int, max: Int) =
+  def nextInt(min: Int, max: Int) =
     r.nextInt(max-min) + min
 
-  def getBoolean =
+  def nextBoolean =
     r.nextBoolean
 
-  def getElement[T](list: Seq[T]) = {
-    val index = getInt(0, list.size)
+  def nextElement[T](list: Seq[T]) = {
+    val index = nextInt(0, list.size)
     list(index)
   }
 
-  def getAnimal = getElement(Data.AnimalList)
-  def getColor  = getElement(Data.ColorList)
-  def getNoun   = getElement(Data.NountList)
+  def nextAnimal = nextElement(Data.AnimalList)
+  def nextColor  = nextElement(Data.ColorList)
+  def nextNoun   = nextElement(Data.NountList)
 
-  def getColoredAnimal = getColor + " " + getAnimal
+  def nextColoredAnimal = nextColor + " " + nextAnimal
 
-  def getCompany = {
-    def getPrefix   = getElement(Data.Company.PrefixList)
-    def getBusiness = getElement(Data.Company.BusinessList)
-    def getSuffix   = getElement(Data.Company.SuffixList)
+  def nextCompany = {
+    def nextPrefix   = nextElement(Data.Company.PrefixList)
+    def nextBusiness = nextElement(Data.Company.BusinessList)
+    def nextSuffix   = nextElement(Data.Company.SuffixList)
 
-    getBoolean match {
-      case true  => getPrefix + getBusiness
-      case false => getBusiness + getSuffix
+    nextBoolean match {
+      case true  => nextPrefix + nextBusiness
+      case false => nextBusiness + nextSuffix
     }
   }
 
-  def getFirstName = getElement(Data.Name.FirstList)
-  def getLastName  = getElement(Data.Name.LastList)
-  def getFullName = getFirstName + " " + getLastName
+  def nextFirstName = nextElement(Data.Name.FirstList)
+  def nextLastName  = nextElement(Data.Name.LastList)
+  def nextFullName = nextFirstName + " " + nextLastName
 }
