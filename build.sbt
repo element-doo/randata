@@ -16,6 +16,7 @@ libraryDependencies ++= Seq(
 , "junit" % "junit" % "4.11" % "test"
 , "com.github.scala-incubator.io" %% "scala-io-core" % "0.4.2"
 , "com.github.scala-incubator.io" %% "scala-io-file" % "0.4.2"
+, "com.github.nscala-time" %% "nscala-time" % "0.6.0"
 )
 
 // ### COMPILE SETTINGS ### //
