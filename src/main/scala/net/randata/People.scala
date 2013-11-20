@@ -1,6 +1,6 @@
 package net.randata
 
-trait People extends Names with Email { self: Randata =>
+trait People extends Names with Email with Strings { self: Randata =>
   def nextAddress = {
     val street = nextElement(Data.StreetNames)
     val suffix = nextElement(Data.StreetSuffxes)
