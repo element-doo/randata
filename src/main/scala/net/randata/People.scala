@@ -1,12 +1,17 @@
 package net.randata
 
 trait People extends Names with Email with Strings { self: Randata =>
-  def nextAddress = {
+  def nextCountry = nextElement(Data.Countries)
+
+  def nextStreet = {
     val street = nextElement(Data.StreetNames)
     val suffix = nextElement(Data.StreetSuffxes)
-    val number = nextInt(1, 500)
-    s"$street $suffix $number"
+    s"$street $suffix"
   }
+
+  def nextZip = nextDigit.repeat(5)
+
+  def nextCity = nextElement(Data.Cities)
 
   def nextPhone = {
     val firstGroup  = (1 to 3).map(e => nextDigit).mkString

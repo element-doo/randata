@@ -10,10 +10,12 @@ object Data {
 
   val AccountDescriptions = load("account-descriptions")
   val Animals             = load("animals")
+  val Cities              = load("cities")
   val Colors              = load("colors")
   val CompanyNames        = load("company-names")
   val CompanyPrefixes     = load("company-prefixes")
   val CompanySuffixes     = load("company-suffixes")
+  val Countries           = load("countries")
   val Currencies          = load("currencies")
   val EmailDomains        = load("email-domains")
   val NamesFemale         = load("names-female")
