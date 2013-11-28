@@ -7,14 +7,16 @@ object Extensions extends Build with Default with Dependencies {
   lazy val other = (
     scalaProject("Extensions-Other")
     inject(
-      Core.root
+      Core.root,
+      Extensions.strings
     )
   )
   
   lazy val people = (
     scalaProject("Extensions-People")
     inject(
-      Core.root
+      Core.root,
+      Extensions.strings
     )
   )
   

@@ -1,4 +1,5 @@
 package net.randata
+package people
 
 trait Email { self: Randata =>
   def nextEmail(firstName: String, lastName: String): String = {

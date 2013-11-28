@@ -1,6 +1,9 @@
 package net.randata
+package other
 
-trait Financial extends Strings { self: Randata =>
+import strings.Strings
+
+trait Financial extends strings.Strings { self: Randata =>
   def nextCurrency = nextElement(Data.Currencies)
 
   def nextAccountDescription = nextElement(Data.AccountDescriptions)

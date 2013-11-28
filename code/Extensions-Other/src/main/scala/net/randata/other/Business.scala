@@ -1,4 +1,5 @@
 package net.randata
+package other
 
 trait Business { self: Randata =>
   def nextCompany = {

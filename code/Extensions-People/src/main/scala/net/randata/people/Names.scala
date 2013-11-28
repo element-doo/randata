@@ -1,4 +1,5 @@
 package net.randata
+package people
 
 trait Names { self: Randata =>
   def nextMaleFirstName   = nextElement(Data.NamesMale)
