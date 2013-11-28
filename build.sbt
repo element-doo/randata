@@ -2,7 +2,7 @@ organization := "randata.net"
 
 name := "randata"
 
-version := "0.0.0"
+version := "0.0.0-SNAPSHOT"
 
 unmanagedSourceDirectories in Compile := (scalaSource in Compile).value :: Nil
 
@@ -61,3 +61,16 @@ javacOptions := Seq(
 EclipseKeys.executionEnvironment := Some(EclipseExecutionEnvironment.JavaSE16)
 
 EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource
+
+// ### PUBLISHING ### //
+
+credentials += Credentials(Path.userHome / ".config" / "randata" / "nexus.config")
+  
+publishArtifact in (Compile, packageDoc) := false
+
+publishTo <<= (version) { version => Some(
+  if (version endsWith "SNAPSHOT")
+    "Element Snapshots" at "http://repo.element.hr/nexus/content/repositories/snapshots/"
+  else
+    "Element Releases"  at "http://repo.element.hr/nexus/content/repositories/releases/")
+}
