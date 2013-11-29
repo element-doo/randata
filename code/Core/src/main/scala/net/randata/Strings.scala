@@ -1,5 +1,4 @@
 package net.randata
-package strings
 
 trait Strings { self: Randata =>
   class Generator(val chars: Set[Char]) extends Function0[Char] {

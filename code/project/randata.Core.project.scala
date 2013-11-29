@@ -4,7 +4,7 @@ import sbt._
 import Keys._
 
 object Core extends Build with Default with Dependencies {
-  lazy val root = (
+  lazy val core = (
     scalaProject("Core")
     inject(
       scalax,

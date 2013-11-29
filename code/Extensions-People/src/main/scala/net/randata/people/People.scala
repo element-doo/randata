@@ -1,8 +1,6 @@
 package net.randata
 package people
 
-import strings.Strings
-
 trait People extends Names with Email with Strings { self: Randata =>
   def nextCountry = nextElement(Data.Countries)
 
