@@ -4,9 +4,9 @@ import sbt._
 import Keys._
 
 trait Repositories {
-  val ElementNexus            = "Element Nexus"             at "http://maven.element.hr/nexus/content/groups/public/"
-  val ElementPrivateReleases  = "Element Private Releases"  at "http://maven.element.hr/nexus/content/repositories/releases-private/"
-  val ElementPrivateSnapshots = "Element Private Snapshots" at "http://maven.element.hr/nexus/content/repositories/snapshots-private/"
+  val ElementNexus     = "Element Nexus"             at "http://maven.element.hr/nexus/content/groups/public/"
+  val ElementReleases  = "Element Releases"  at "http://repo.element.hr/nexus/content/repositories/releases/"
+  val ElementSnapshots = "Element Snapshots" at "http://repo.element.hr/nexus/content/repositories/snapshots/"
 }
 
 //  ---------------------------------------------------------------------------
@@ -15,8 +15,8 @@ trait Resolvers extends Repositories {
   val resolverSettings = Seq(
     resolvers := Seq(
       ElementNexus
-    , ElementPrivateReleases
-    , ElementPrivateSnapshots
+    , ElementReleases
+    , ElementSnapshots
     ),
     externalResolvers <<= resolvers map { r =>
       Resolver.withDefaultResolvers(r, mavenCentral = false)
@@ -29,7 +29,7 @@ trait Resolvers extends Repositories {
 trait Publishing extends Repositories {
   val publishingSettings = Seq(
     publishTo <<= (version) { version => Some(
-        if (version endsWith "SNAPSHOT") ElementPrivateSnapshots else ElementPrivateReleases
+        if (version endsWith "SNAPSHOT") ElementSnapshots else ElementReleases
       )}
   , credentials += Credentials(configPath / "nexus.config")
   , publishArtifact in (Compile, packageDoc) := false

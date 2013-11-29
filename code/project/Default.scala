@@ -55,7 +55,7 @@ trait Default extends Resolvers with Publishing {
     id
   , file(id)
   , settings = scalaSettings ++ Seq(
-      version := "0.0.0-SNAPSHOT"
+      version := libraryVersion
     , name := "Randata-" + id
     , organization := "net.randata"
     )
