@@ -1,8 +1,10 @@
 package net.randata
 package people
 
-trait Email { self: Randata =>
-  def nextEmail(firstName: String, lastName: String): String = {
+trait Emails { self: Randata =>
+  def nextDomain = nextElement(Data.EmailDomains)
+
+  def nextEmail(firstName: String, lastName: String) = {
     val f = firstName.toLowerCase
     val l = lastName.toLowerCase
     val name =
@@ -12,7 +14,8 @@ trait Email { self: Randata =>
         case 3 => f + "." + l  // first.last
         case 4 => l + "." + f  // last.fist
     }
-    val domain = nextElement(Data.EmailDomains)
-    s"$name@$domain"
+    s"$name@$nextDomain"
   }
+
+  def nextEmail(nick: String): String = s"$nick@$nextDomain"
 }
