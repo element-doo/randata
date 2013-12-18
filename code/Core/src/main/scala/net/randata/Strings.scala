@@ -13,8 +13,8 @@ trait Strings { self: Randata =>
   def DG(values: Int*) = new DiscreteGenerator(values: _*)
   class DiscreteGenerator(values: Int*) extends Generator(values.map(_.toChar).toSet)
 
-  val nextDigit     = new RangeGenerator(48,  58)
-  val nextUppercase = new RangeGenerator(65,  91)
-  val nextLowercase = new RangeGenerator(97, 123)
-  val nextOtherChar = RG(33, 48) | RG(58, 65) | RG(91, 97) | RG(123, 127)
+  val nextDigit     = new RangeGenerator(48,  57)
+  val nextUppercase = new RangeGenerator(65,  90)
+  val nextLowercase = new RangeGenerator(97, 122)
+  val nextOtherChar = RG(33, 47) | RG(58, 64) | RG(91, 96) | RG(123, 126)
 }
