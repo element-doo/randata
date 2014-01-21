@@ -17,6 +17,7 @@ object Data {
   val CompanySuffixes     = load("company-suffixes")
   val Countries           = load("countries")
   val Currencies          = load("currencies")
+  val Descriptions        = load("descriptions")
   val EmailDomains        = load("email-domains")
   val NamesFemale         = load("names-female")
   val NamesLast           = load("names-last")
