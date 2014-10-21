@@ -11,7 +11,7 @@ object Core extends Build with Default with Dependencies {
       scalaTime
     )
   )
-  
+
   lazy val java = (
     scalaProject("Java")
     inject(

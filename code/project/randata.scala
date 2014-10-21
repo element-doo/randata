@@ -2,10 +2,10 @@ import sbt._
 import scala.io.Source
 
 package object randata {
-  val libraryVersion = "0.0.5-SNAPSHOT"
+  val libraryVersion = "0.0.6"
 
   private val log = ConsoleLogger()
 
-  val configPath = Path.userHome / ".config" / ("randata")
+  val configPath = Path.userHome / ".config" / "randata"
   log.info("Config path: " + configPath)
 }

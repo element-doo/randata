@@ -10,14 +10,14 @@ object Extensions extends Build with Default with Dependencies {
       Core.core
     )
   )
-  
+
   lazy val people = (
     scalaProject("Extensions-People")
     inject(
       Core.core
     )
   )
-  
+
   lazy val places = (
     scalaProject("Extensions-Places")
     inject(
