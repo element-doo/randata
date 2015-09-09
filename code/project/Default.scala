@@ -12,7 +12,7 @@ trait Default extends Resolvers with Publishing {
     eclipseSettings ++
     graphSettings ++
     publishingSettings ++ Seq(
-      crossScalaVersions := Seq("2.10.4", "2.11.2")
+      crossScalaVersions := Seq("2.10.4", "2.11.7")
     , scalaVersion := crossScalaVersions.value.head
     , scalacOptions := Seq(
         "-deprecation"

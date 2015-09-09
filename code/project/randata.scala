@@ -2,7 +2,7 @@ import sbt._
 import scala.io.Source
 
 package object randata {
-  val libraryVersion = "0.0.6"
+  val libraryVersion = "0.0.7"
 
   private val log = ConsoleLogger()
 
