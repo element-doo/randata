@@ -4,15 +4,15 @@ import sbt._
 import Keys._
 
 trait Default extends Resolvers with Publishing {
-  import com.typesafe.sbteclipse.plugin.EclipsePlugin.{ settings => eclipseSettings, _ }
+  import com.typesafe.sbteclipse.plugin.EclipsePlugin._
   import net.virtualvoid.sbt.graph.Plugin._
 
   lazy val scalaSettings =
     Defaults.coreDefaultSettings ++
-    eclipseSettings ++
+    autoImport.settings ++
     graphSettings ++
     publishingSettings ++ Seq(
-      crossScalaVersions := Seq("2.10.4", "2.11.7")
+      crossScalaVersions := Seq("2.11.7", "2.10.6")
     , scalaVersion := crossScalaVersions.value.head
     , scalacOptions := Seq(
         "-deprecation"
